@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cffh655btummx"]
+
+[ext_resource type="Script" uid="uid://dqbnmfshe844y" path="res://场景/Manager/SystemManager.cs" id="1_34jf6"]
+[ext_resource type="PackedScene" uid="uid://ehmsg3cxyh5y" path="res://场景/Manager/Input/InputManager.tscn" id="1_clpxj"]
+[ext_resource type="PackedScene" uid="uid://ka076sqnnyfx" path="res://场景/Manager/Process/ProcessManager.tscn" id="3_6gw6o"]
+
+[node name="SystemManager" type="Node"]
+script = ExtResource("1_34jf6")
+
+[node name="ProcessManager" parent="." instance=ExtResource("3_6gw6o")]
+
+[node name="InputManager" parent="." instance=ExtResource("1_clpxj")]

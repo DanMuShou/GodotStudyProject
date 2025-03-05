@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dx5o8liifdcir"]
+
+[ext_resource type="Shader" uid="uid://bkhwi21hn4oh6" path="res://2_资源/材质/网格/River.gdshader" id="1_c5d7i"]
+[ext_resource type="Texture2D" uid="uid://dwm57ka5qxtc2" path="res://1_资产/噪声/noise.png" id="2_1rfix"]
+
+[resource]
+render_priority = 3
+shader = ExtResource("1_c5d7i")
+shader_parameter/Color = Color(0, 0.501961, 1, 0.196078)
+shader_parameter/Noise = ExtResource("2_1rfix")
+shader_parameter/Glossiness = 0.102
+shader_parameter/Specular = 0.534

@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5gkdqaq4fr0u"]
+
+[ext_resource type="PackedScene" uid="uid://d3he2jgl5ppmh" path="res://场景/3D/网格/网格块/HexGrid.tscn" id="1_4ke3k"]
+[ext_resource type="Script" uid="uid://vyjy61oi3iyc" path="res://场景/3D/主场景/Main.cs" id="1_tuj34"]
+[ext_resource type="Environment" uid="uid://bwayuxvaym31m" path="res://2_资源/世界环境/MainEnvironment.tres" id="2_8s3yo"]
+[ext_resource type="PackedScene" uid="uid://cffh655btummx" path="res://场景/Manager/SystemManager.tscn" id="2_l4wkv"]
+[ext_resource type="PackedScene" uid="uid://vsprf5nvicwr" path="res://场景/3D/相机/HexMapCamera.tscn" id="3_1ow4s"]
+[ext_resource type="PackedScene" uid="uid://dvkrrs64gv2l6" path="res://场景/2D/UI/Ui.tscn" id="3_8s3yo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l4wkv"]
+
+[sub_resource type="Curve3D" id="Curve3D_l4wkv"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 8, 0, 0, 4, 0, -6, 0, 0, 0, 12, 0, 6, 0, 0, 0, 0, 0, 0, 8, 0, 12),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("_systemManager", "_hexGrid", "_camera", "_ui")]
+script = ExtResource("1_tuj34")
+_systemManager = NodePath("SystemManager")
+_hexGrid = NodePath("HexGrid")
+_camera = NodePath("HexMapCamera")
+_ui = NodePath("UI")
+
+[node name="SystemManager" parent="." instance=ExtResource("2_l4wkv")]
+
+[node name="Word" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Word"]
+environment = ExtResource("2_8s3yo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Word"]
+transform = Transform3D(0.766044, 0.271654, -0.582563, 0, 0.906307, 0.422618, 0.642787, -0.323744, 0.694272, 0, 0, 0)
+light_color = Color(1, 0.969667, 0.87, 1)
+light_energy = 1.3
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+
+[node name="UI" parent="." node_paths=PackedStringArray("_hexGrid") instance=ExtResource("3_8s3yo")]
+_hexGrid = NodePath("../HexGrid")
+
+[node name="HexGrid" parent="." node_paths=PackedStringArray("_camera") instance=ExtResource("1_4ke3k")]
+_camera = NodePath("../HexMapCamera")
+
+[node name="HexMapCamera" parent="." node_paths=PackedStringArray("_hexGrid") instance=ExtResource("3_1ow4s")]
+_hexGrid = NodePath("../HexGrid")
+
+[node name="Test" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_l4wkv")
+skeleton = NodePath("../..")
+
+[node name="Path3D" type="Path3D" parent="Test"]
+curve = SubResource("Curve3D_l4wkv")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Test/Path3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.999998, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+loop = false

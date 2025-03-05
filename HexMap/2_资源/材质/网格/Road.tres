@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c6ucv6kpnxmkc"]
+
+[ext_resource type="Shader" uid="uid://c4wdw0kryxy8v" path="res://2_资源/材质/网格/Road.gdshader" id="1_iq6gi"]
+[ext_resource type="Texture2D" uid="uid://dwm57ka5qxtc2" path="res://1_资产/噪声/noise.png" id="2_1wyg4"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_iq6gi")
+shader_parameter/Color = Color(1, 0, 0, 1)
+shader_parameter/Noise = ExtResource("2_1wyg4")
+shader_parameter/Glossiness = 0.5
+shader_parameter/Specular = 0.0
+shader_parameter/DepthOffsetY = 0.01

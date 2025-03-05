@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bicfukywegtac"]
+
+[ext_resource type="Shader" uid="uid://c3dqycictiolk" path="res://2_资源/材质/网格/Estuaries.gdshader" id="1_1rl58"]
+[ext_resource type="Texture2D" uid="uid://dwm57ka5qxtc2" path="res://1_资产/噪声/noise.png" id="2_suhdh"]
+
+[resource]
+render_priority = 3
+shader = ExtResource("1_1rl58")
+shader_parameter/Color = Color(0, 0.501961, 1, 0.196078)
+shader_parameter/Noise = ExtResource("2_suhdh")

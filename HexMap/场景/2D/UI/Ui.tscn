@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvkrrs64gv2l6"]
+
+[ext_resource type="Script" uid="uid://s0iajgcgtfwl" path="res://场景/2D/UI/Ui.cs" id="1_1gpq0"]
+[ext_resource type="PackedScene" uid="uid://crnjlpe6abopc" path="res://场景/2D/UI/3D网格编辑器/HexMapEditor.tscn" id="1_y88yd"]
+[ext_resource type="PackedScene" uid="uid://b7usnkd6gyp43" path="res://场景/2D/UI/新建地图/NewMapMenu.tscn" id="2_1gpq0"]
+[ext_resource type="PackedScene" uid="uid://4236x8rn05hh" path="res://场景/2D/UI/保存加载/SaveLoadMenu.tscn" id="3_y2mim"]
+[ext_resource type="PackedScene" uid="uid://che87vqlaoojm" path="res://场景/2D/UI/游戏模式/HexGameUi.tscn" id="5_y2mim"]
+
+[node name="UI" type="Control" node_paths=PackedStringArray("_editor", "_newMapMenu", "_saveLoadMenu", "_gameUi")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1gpq0")
+_editor = NodePath("HexMapEditor")
+_newMapMenu = NodePath("NewMapMenu")
+_saveLoadMenu = NodePath("SaveLoadMenu")
+_gameUi = NodePath("HexGameUi")
+
+[node name="HexGameUi" parent="." instance=ExtResource("5_y2mim")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 158.0
+offset_bottom = 45.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="HexMapEditor" parent="." instance=ExtResource("1_y88yd")]
+layout_mode = 1
+mouse_filter = 0
+
+[node name="NewMapMenu" parent="." instance=ExtResource("2_1gpq0")]
+layout_mode = 1
+
+[node name="SaveLoadMenu" parent="." instance=ExtResource("3_y2mim")]
+layout_mode = 1

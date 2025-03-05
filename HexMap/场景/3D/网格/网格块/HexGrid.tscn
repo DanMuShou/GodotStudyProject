@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3he2jgl5ppmh"]
+
+[ext_resource type="Script" uid="uid://de2pm2ledytg8" path="res://场景/3D/网格/网格块/HexGrid.cs" id="1_gpbie"]
+[ext_resource type="PackedScene" uid="uid://crlh1ns7rgwji" path="res://场景/3D/网格/网格块/一级区块/细胞/HexCell.tscn" id="2_fqgwr"]
+[ext_resource type="PackedScene" uid="uid://cbsqrn5awb0vh" path="res://场景/3D/网格/单元块/HexUnit.tscn" id="4_b7crh"]
+[ext_resource type="PackedScene" uid="uid://bus3yd58lscem" path="res://场景/组件/噪声生成器/NoiseGenerator.tscn" id="4_rko1j"]
+[ext_resource type="PackedScene" uid="uid://bebd22s452md" path="res://场景/3D/网格/网格块/一级区块/HexGridChunk.tscn" id="4_ws2ls"]
+[ext_resource type="Script" uid="uid://codxps2q0ndc7" path="res://脚本/HexCellShaderData.cs" id="6_02w2q"]
+
+[node name="HexGrid" type="Node3D" node_paths=PackedStringArray("_noiseGenerator", "_cellShaderData")]
+script = ExtResource("1_gpbie")
+_colors = PackedColorArray(1, 1, 1, 1, 0.5, 0, 0, 1, 0, 0.5, 0, 1, 0, 0, 0.5, 1, 0.5, 0.5, 0, 1, 0.5, 0.25, 0, 1, 0.5, 0, 0.5, 1, 0.5, 0.5, 0.5, 1)
+_noiseGenerator = NodePath("NoiseGenerator")
+_cellShaderData = NodePath("HexCellShaderData")
+_cellPacked = ExtResource("2_fqgwr")
+_chunkPacked = ExtResource("4_ws2ls")
+_unitPrefab = ExtResource("4_b7crh")
+
+[node name="NoiseGenerator" parent="." instance=ExtResource("4_rko1j")]
+
+[node name="HexCellShaderData" type="Node" parent="."]
+script = ExtResource("6_02w2q")

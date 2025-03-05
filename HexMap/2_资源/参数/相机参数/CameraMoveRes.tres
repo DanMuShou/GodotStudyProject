@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bij0fl16tenwv"]
+
+[ext_resource type="Script" uid="uid://d2y62fne2esxq" path="res://2_资源/参数/相机参数/CameraMoveRes.cs" id="1_iw65s"]
+
+[resource]
+script = ExtResource("1_iw65s")
+MoveSpeedMinZoom = 40.0
+MoveSpeedMaxZoom = 10.0
+RotationSpeed = 10.0
+StickMinZoom = 25.0
+StickMaxZoom = 4.5
+SwivelMinZoom = -90.0
+SwivelMaxZoom = -45.0

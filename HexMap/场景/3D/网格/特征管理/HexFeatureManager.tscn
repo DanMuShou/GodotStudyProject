@@ -1,0 +1,61 @@
+[gd_scene load_steps=28 format=3 uid="uid://c0sh2xis83pb"]
+
+[ext_resource type="Script" uid="uid://b5xgjf0w046ap" path="res://场景/3D/网格/特征管理/HexFeatureManager.cs" id="1_w7uje"]
+[ext_resource type="BoxMesh" uid="uid://b8tk8ie826d75" path="res://2_资源/网格/特征/城镇/UrbanHigh1.tres" id="2_7si76"]
+[ext_resource type="BoxMesh" uid="uid://csi7qsavsiibq" path="res://2_资源/网格/特征/城镇/UrbanHigh2.tres" id="3_fxrwh"]
+[ext_resource type="BoxMesh" uid="uid://cbyare56urtnf" path="res://2_资源/网格/特征/城镇/UrbanMedium1.tres" id="4_vmj6t"]
+[ext_resource type="BoxMesh" uid="uid://ctjwvntkc57fp" path="res://2_资源/网格/特征/城镇/UrbanMedium2.tres" id="5_7865w"]
+[ext_resource type="BoxMesh" uid="uid://1ye4o33w8day" path="res://2_资源/网格/特征/城镇/UrbanLow1.tres" id="6_gkq43"]
+[ext_resource type="BoxMesh" uid="uid://ch4wrg1cdjalu" path="res://2_资源/网格/特征/城镇/UrbanLow2.tres" id="7_ajfvd"]
+[ext_resource type="Material" uid="uid://bxrk8lka6pt75" path="res://2_资源/材质/特征/Farm.tres" id="8_fxrwh"]
+[ext_resource type="BoxMesh" uid="uid://cpsu3bf03tvw5" path="res://2_资源/网格/特征/植被/PlantH1.tres" id="9_la7pn"]
+[ext_resource type="BoxMesh" uid="uid://wjliqhjybpbe" path="res://2_资源/网格/特征/植被/PlantH2.tres" id="10_1mk2b"]
+[ext_resource type="BoxMesh" uid="uid://dodb418xeerfj" path="res://2_资源/网格/特征/植被/PlantM1.tres" id="11_7efh2"]
+[ext_resource type="BoxMesh" uid="uid://cmkiagtfkefg1" path="res://2_资源/网格/特征/植被/PlantM2.tres" id="12_v3aur"]
+[ext_resource type="BoxMesh" uid="uid://dvynk5dw8hlpe" path="res://2_资源/网格/特征/植被/PlantLow1.tres" id="13_0osrl"]
+[ext_resource type="BoxMesh" uid="uid://ctihw86sal3qj" path="res://2_资源/网格/特征/植被/PlantLow2.tres" id="14_wyphb"]
+[ext_resource type="PackedScene" uid="uid://bfkauj8n28moj" path="res://场景/3D/网格/绘制/HexMesh.tscn" id="15_1mk2b"]
+[ext_resource type="PackedScene" uid="uid://bqjyfhfi4ab0p" path="res://场景/3D/网格/特征管理/特征/复杂特征/Castle.tscn" id="15_jobsr"]
+[ext_resource type="PackedScene" uid="uid://cp7n5ypom5131" path="res://场景/3D/网格/特征管理/特征/复杂特征/WallTower.tscn" id="15_v3aur"]
+[ext_resource type="PackedScene" uid="uid://dx7lqved6js2m" path="res://场景/3D/网格/特征管理/特征/复杂特征/Bridge.tscn" id="16_0osrl"]
+[ext_resource type="Material" uid="uid://bvy33s62hldjj" path="res://2_资源/材质/特征/Urban.tres" id="16_7efh2"]
+[ext_resource type="PackedScene" uid="uid://cdvexwqn0v7h" path="res://场景/3D/网格/特征管理/特征/复杂特征/Ziggurat.tscn" id="16_yq2c8"]
+[ext_resource type="PackedScene" uid="uid://eskby277y0yt" path="res://场景/3D/网格/特征管理/特征/复杂特征/Megaflora.tscn" id="17_pos5u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vmj6t"]
+material = ExtResource("8_fxrwh")
+size = Vector3(0.25, 0.01, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7865w"]
+material = ExtResource("8_fxrwh")
+size = Vector3(0.35, 0.01, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gkq43"]
+material = ExtResource("8_fxrwh")
+size = Vector3(0.175, 0.01, 0.175)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ajfvd"]
+material = ExtResource("8_fxrwh")
+size = Vector3(0.25, 0.01, 0.125)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tb2m4"]
+material = ExtResource("8_fxrwh")
+size = Vector3(0.1, 0.01, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_la7pn"]
+material = ExtResource("8_fxrwh")
+size = Vector3(0.15, 0.01, 0.075)
+
+[node name="HexFeatureManager" type="Node3D" node_paths=PackedStringArray("_walls")]
+script = ExtResource("1_w7uje")
+_walls = NodePath("Wall")
+_urbanMesh = Array[Array]([[ExtResource("2_7si76"), ExtResource("3_fxrwh")], [ExtResource("4_vmj6t"), ExtResource("5_7865w")], [ExtResource("6_gkq43"), ExtResource("7_ajfvd")]])
+_farmMesh = Array[Array]([[SubResource("BoxMesh_vmj6t"), SubResource("BoxMesh_7865w")], [SubResource("BoxMesh_gkq43"), SubResource("BoxMesh_ajfvd")], [SubResource("BoxMesh_tb2m4"), SubResource("BoxMesh_la7pn")]])
+_plantMesh = Array[Array]([[ExtResource("9_la7pn"), ExtResource("10_1mk2b")], [ExtResource("11_7efh2"), ExtResource("12_v3aur")], [ExtResource("13_0osrl"), ExtResource("14_wyphb")]])
+_special = Array[PackedScene]([ExtResource("15_jobsr"), ExtResource("16_yq2c8"), ExtResource("17_pos5u")])
+_wallTower = ExtResource("15_v3aur")
+_bridge = ExtResource("16_0osrl")
+
+[node name="Wall" parent="." instance=ExtResource("15_1mk2b")]
+_material = ExtResource("16_7efh2")
+_debugColor = Color(0.608667, 0.83, 0, 1)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bus3yd58lscem"]
+
+[ext_resource type="Script" uid="uid://geu477oi6nvf" path="res://场景/组件/噪声生成器/NoiseGenerator.cs" id="1_5lfey"]
+
+[node name="NoiseGenerator" type="Node"]
+script = ExtResource("1_5lfey")

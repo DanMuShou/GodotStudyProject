@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ka076sqnnyfx"]
+
+[ext_resource type="Script" uid="uid://dcxqy0urvigt" path="res://场景/Manager/Process/ProcessManager.cs" id="1_u4scr"]
+
+[node name="ProcessManager" type="Node"]
+script = ExtResource("1_u4scr")

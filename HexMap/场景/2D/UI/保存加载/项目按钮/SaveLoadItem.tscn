@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlk5vmfy6nqj8"]
+
+[ext_resource type="Script" uid="uid://xmoblketpn27" path="res://场景/2D/UI/保存加载/项目按钮/SaveLoadItem.cs" id="1_1d6k5"]
+
+[node name="SaveLoadItem" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+text = "Item"
+script = ExtResource("1_1d6k5")

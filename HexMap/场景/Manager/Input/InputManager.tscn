@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ehmsg3cxyh5y"]
+
+[ext_resource type="Script" uid="uid://cnprnxxym005v" path="res://场景/Manager/Input/InputManager.cs" id="1_y7hel"]
+[ext_resource type="Script" uid="uid://b35p8i7nn7uxt" path="res://脚本/组件/进程/InputProcess.cs" id="2_5k7xb"]
+
+[node name="InputManager" type="Node" node_paths=PackedStringArray("_inputProcess")]
+script = ExtResource("1_y7hel")
+_inputProcess = NodePath("InputProcess")
+
+[node name="InputProcess" type="Node" parent="."]
+script = ExtResource("2_5k7xb")

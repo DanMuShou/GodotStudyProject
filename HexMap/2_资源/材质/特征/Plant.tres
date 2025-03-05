@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cdiebeoetnnb7"]
+
+[ext_resource type="Shader" uid="uid://d3gv3auiywwng" path="res://2_资源/材质/特征/Feature.gdshader" id="1_xh4qe"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xh4qe")
+shader_parameter/Color = Color(0, 0.51, 0, 1)

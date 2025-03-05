@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bk5jslh3b3ley"]
+
+[ext_resource type="Shader" uid="uid://cgpqkjlpgl2ou" path="res://2_资源/材质/网格/WaterShore.gdshader" id="1_6tvio"]
+[ext_resource type="Texture2D" uid="uid://dwm57ka5qxtc2" path="res://1_资产/噪声/noise.png" id="2_8b8gg"]
+
+[resource]
+render_priority = 3
+shader = ExtResource("1_6tvio")
+shader_parameter/Color = Color(0, 0.294118, 0.878431, 0.580392)
+shader_parameter/Noise = ExtResource("2_8b8gg")

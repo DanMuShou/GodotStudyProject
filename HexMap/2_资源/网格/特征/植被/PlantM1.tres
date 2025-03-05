@@ -1,0 +1,7 @@
+[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://dodb418xeerfj"]
+
+[ext_resource type="Material" uid="uid://cdiebeoetnnb7" path="res://2_资源/材质/特征/Plant.tres" id="1_nbf1m"]
+
+[resource]
+material = ExtResource("1_nbf1m")
+size = Vector3(0.075, 0.1, 0.075)

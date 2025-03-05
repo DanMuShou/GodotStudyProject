@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://crlh1ns7rgwji"]
+
+[ext_resource type="Script" uid="uid://c2bapf451idyj" path="res://场景/3D/网格/网格块/一级区块/细胞/HexCell.cs" id="1_66cxw"]
+[ext_resource type="Material" uid="uid://t1wn8wy7ar6i" path="res://2_资源/材质/单元格高亮/Highlight.tres" id="2_e1q7v"]
+
+[sub_resource type="ExternalTexture" id="ExternalTexture_4lxbd"]
+
+[node name="HexCell" type="Node3D" node_paths=PackedStringArray("_distanceLab", "_highlightSpr")]
+script = ExtResource("1_66cxw")
+_distanceLab = NodePath("Distance")
+_highlightSpr = NodePath("Highlight")
+
+[node name="Distance" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.01, 0)
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+text = "A"
+font_size = 96
+outline_size = 0
+
+[node name="Highlight" type="Sprite3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+material_override = ExtResource("2_e1q7v")
+axis = 1
+double_sided = false
+texture = SubResource("ExternalTexture_4lxbd")

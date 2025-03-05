@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8a2ojble4x6v"]
+
+[ext_resource type="Script" uid="uid://crq1g5ptj4ucm" path="res://场景/组件/UI/选择级别/EnableLevelComponent.cs" id="1_h5fr0"]
+
+[node name="EnableLevelComponent" type="VBoxContainer" node_paths=PackedStringArray("_enableBut", "_levelSlider")]
+offset_right = 330.0
+offset_bottom = 51.0
+focus_mode = 1
+script = ExtResource("1_h5fr0")
+_enableBut = NodePath("EnableButton")
+_levelSlider = NodePath("LevelSlider")
+
+[node name="EnableButton" type="CheckButton" parent="."]
+layout_mode = 2
+focus_mode = 1
+text = "启用 : 等级"
+alignment = 1
+
+[node name="LevelSlider" type="HSlider" parent="."]
+layout_mode = 2
+focus_mode = 1
+max_value = 3.0
+tick_count = 5
+ticks_on_borders = true

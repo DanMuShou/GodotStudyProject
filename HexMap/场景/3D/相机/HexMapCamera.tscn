@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://vsprf5nvicwr"]
+
+[ext_resource type="Script" uid="uid://clidv83hcd0vr" path="res://场景/3D/相机/HexMapCamera.cs" id="1_x64yf"]
+[ext_resource type="Resource" uid="uid://bij0fl16tenwv" path="res://2_资源/参数/相机参数/CameraMoveRes.tres" id="2_vul6c"]
+[ext_resource type="Script" uid="uid://bqjawup0xip5l" path="res://脚本/组件/进程/CameraPhyProcess.cs" id="4_rldpc"]
+
+[node name="HexMapCamera" type="Node3D" node_paths=PackedStringArray("_phyProcess", "_swivel", "_stick", "Camera")]
+script = ExtResource("1_x64yf")
+_cameraMoveRes = ExtResource("2_vul6c")
+_phyProcess = NodePath("CameraPhyProcess")
+_swivel = NodePath("Swivel")
+_stick = NodePath("Swivel/Stick")
+Camera = NodePath("Swivel/Stick/Camera3D")
+
+[node name="CameraPhyProcess" type="Node" parent="." node_paths=PackedStringArray("_swivel", "_stick")]
+script = ExtResource("4_rldpc")
+_cameraMoveRes = ExtResource("2_vul6c")
+_swivel = NodePath("../Swivel")
+_stick = NodePath("../Swivel/Stick")
+
+[node name="Swivel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="Stick" type="Node3D" parent="Swivel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+
+[node name="Camera3D" type="Camera3D" parent="Swivel/Stick"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://che87vqlaoojm"]
+
+[ext_resource type="Script" uid="uid://ba75yemrsdx78" path="res://场景/2D/UI/游戏模式/HexGameUi.cs" id="1_26q8j"]
+[ext_resource type="Script" uid="uid://btjhnxohq3qod" path="res://脚本/组件/进程/GameUiPhyProcess.cs" id="2_6btvg"]
+
+[node name="HexGameUi" type="Control" node_paths=PackedStringArray("_gamePhyProcess")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+script = ExtResource("1_26q8j")
+_gamePhyProcess = NodePath("GameUiPhyProcess")
+
+[node name="GameUiPhyProcess" type="Node" parent="."]
+script = ExtResource("2_6btvg")

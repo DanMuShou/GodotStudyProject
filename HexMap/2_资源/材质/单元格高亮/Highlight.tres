@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://t1wn8wy7ar6i"]
+
+[ext_resource type="Shader" uid="uid://bvt455coy2b1v" path="res://2_资源/材质/单元格高亮/Highlight.gdshader" id="1_cj17q"]
+[ext_resource type="Texture2D" uid="uid://cmbuod1ok3rac" path="res://1_资产/纹理组/cell-outline.png" id="2_ugtuk"]
+
+[resource]
+render_priority = 10
+shader = ExtResource("1_cj17q")
+shader_parameter/_tex = ExtResource("2_ugtuk")
+shader_parameter/_color = Color(1, 1, 1, 1)

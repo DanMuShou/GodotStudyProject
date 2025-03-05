@@ -1,0 +1,151 @@
+[gd_scene load_steps=6 format=3 uid="uid://crnjlpe6abopc"]
+
+[ext_resource type="Script" uid="uid://ckkrpa7u4p8l1" path="res://场景/2D/UI/3D网格编辑器/HexMapEditor.cs" id="1_6uyae"]
+[ext_resource type="PackedScene" uid="uid://b8a2ojble4x6v" path="res://场景/组件/UI/选择级别/EnableLevelComponent.tscn" id="2_8pwrk"]
+[ext_resource type="Material" uid="uid://dgex0o00gn1pn" path="res://2_资源/材质/网格/Terrain.tres" id="2_caixw"]
+[ext_resource type="PackedScene" uid="uid://b5f5lpadt7v4" path="res://场景/组件/UI/弹窗选择/OptionSelectComponent.tscn" id="3_c5psa"]
+[ext_resource type="Script" uid="uid://csemgljmswck7" path="res://脚本/组件/进程/EditPhyProcess.cs" id="3_jtuju"]
+
+[node name="HexMapEditor" type="MarginContainer" node_paths=PackedStringArray("_editPhyProcess", "_editMode", "_editTab", "Elevation", "Water", "Urban", "Farm", "Plant", "Special", "Brush", "Texture", "River", "Road", "Wall", "_labelVisual", "_gridVisual", "_saveBut", "_loadBut", "_newMapBut")]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 160.0
+grow_vertical = 2
+size_flags_horizontal = 0
+focus_mode = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_6uyae")
+_terrainMaterial = ExtResource("2_caixw")
+_editPhyProcess = NodePath("EditPhyProcess")
+_editMode = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditMode")
+_editTab = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab")
+Elevation = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Elevation")
+Water = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Water")
+Urban = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Urban")
+Farm = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Farm")
+Plant = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Plant")
+Special = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Special")
+Brush = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Brush")
+Texture = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Texture")
+River = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/River")
+Road = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Road")
+Wall = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/Wall")
+_labelVisual = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/LabelVisual")
+_gridVisual = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap/GridVisual")
+_saveBut = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/SetMap/SaveAndLoad/Save")
+_loadBut = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/SetMap/SaveAndLoad/Load")
+_newMapBut = NodePath("PanelContainer/MarginContainer/VBoxContainer/EditTab/SetMap/NewMap")
+
+[node name="EditPhyProcess" type="Node" parent="."]
+script = ExtResource("3_jtuju")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 0
+focus_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/separation = 5
+
+[node name="EditMode" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 1
+text = "编辑模式"
+alignment = 1
+
+[node name="EditTab" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+tabs_visible = false
+deselect_enabled = true
+
+[node name="EditHexMap" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Elevation" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Water" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Urban" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Farm" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Plant" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Special" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Brush" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Texture" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("3_c5psa")]
+layout_mode = 2
+
+[node name="River" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("3_c5psa")]
+layout_mode = 2
+
+[node name="Road" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("3_c5psa")]
+layout_mode = 2
+
+[node name="Wall" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap" instance=ExtResource("3_c5psa")]
+layout_mode = 2
+
+[node name="LabelVisual" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap"]
+layout_mode = 2
+focus_mode = 1
+text = "格子标签"
+alignment = 1
+
+[node name="GridVisual" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/EditHexMap"]
+layout_mode = 2
+focus_mode = 1
+text = "格子网格"
+alignment = 1
+
+[node name="SetMap" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="SaveAndLoad" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/SetMap"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/separation = 5
+
+[node name="Save" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/SetMap/SaveAndLoad"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "保存"
+
+[node name="Load" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/SetMap/SaveAndLoad"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "加载"
+
+[node name="NewMap" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/EditTab/SetMap"]
+layout_mode = 2
+focus_mode = 1
+text = "新建地图"

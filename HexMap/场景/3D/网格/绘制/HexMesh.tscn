@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfkauj8n28moj"]
+
+[ext_resource type="Script" uid="uid://l170o0gtf3gj" path="res://场景/3D/网格/绘制/HexMesh.cs" id="1_b3mev"]
+
+[node name="HexMesh" type="MeshInstance3D"]
+script = ExtResource("1_b3mev")
+_debugColor = Color(0.0431373, 0, 0.831373, 1)

@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://4236x8rn05hh"]
+
+[ext_resource type="Script" uid="uid://devgpl1olwmto" path="res://场景/2D/UI/保存加载/SaveLoadMenu.cs" id="1_brb7d"]
+[ext_resource type="PackedScene" uid="uid://dlk5vmfy6nqj8" path="res://场景/2D/UI/保存加载/项目按钮/SaveLoadItem.tscn" id="2_vh3hi"]
+
+[node name="SaveLoadMenu" type="ColorRect" node_paths=PackedStringArray("_title", "_inputText", "_container", "_actionBut", "_deleteBut", "_cancelBut")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+color = Color(0.5, 0.5, 0.5, 0.498039)
+script = ExtResource("1_brb7d")
+_title = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Title")
+_inputText = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Input")
+_container = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/Container")
+_actionBut = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Action")
+_deleteBut = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Delete")
+_cancelBut = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Cancel")
+_itemPacked = ExtResource("2_vh3hi")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(300, 350)
+layout_mode = 2
+focus_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 1
+text = "地图"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/PanelContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Container" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+focus_mode = 1
+
+[node name="ColorRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/Container" instance=ExtResource("2_vh3hi")]
+layout_mode = 2
+
+[node name="Input" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 1
+placeholder_text = "输入或选择地图名称"
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/separation = 10
+
+[node name="Action" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+text = "活动"
+
+[node name="Delete" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+text = "删除"
+
+[node name="Cancel" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+text = "返回"

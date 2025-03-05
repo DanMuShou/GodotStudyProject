@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=4 uid="uid://dx7lqved6js2m"]
+
+[ext_resource type="Material" uid="uid://bvy33s62hldjj" path="res://2_资源/材质/特征/Urban.tres" id="1_3d2rc"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3d2rc"]
+_surfaces = [{
+"aabb": AABB(-0.4, -0.05, -0.3, 0.8, 0.25, 0.3),
+"attribute_data": PackedByteArray("AAAAAAAAgD4AAIA/AACAPgAAgD8AAKA+AACAPwAAAD4AAAAAAAAAPgAAAAAAAIA9AABAPgAAAD8AAKA+AAAAPwAAAD9mZmY/AABAPgAAAD8AAAA/ZmZmPwAAoD4zMzM/AAAAAAAAAD4AAIA/AAAAPgAAgD8AAEA+AAAAAAAAoD4AAIA/AACgPgAAgD8AAMA+AAAAP2ZmZj8AADA/AAAAPwAAUD8AAAA/AAAwPzMzMz8AAAA/ZmZmPwAAUD8AAAA/AAAAP2ZmZj8AAAA/AACAPwAAoD4zMzM/AACAPwAAQD4AAAAAAABAPgAAAAAAAAA+AACAPwAAoD4AAAAAAACgPgAAAAAAAIA+AACAPwAAgD4AAAAAAACAPgAAAAAAAEA+AAAwPzMzMz8AAAA/AACAPwAAAD9mZmY/AAAAAAAAQD4AAIA/AABAPgAAgD8AAIA+AAAAAAAA4D4AAIA/AADgPgAAgD8AAAA/AACgPjMzMz8AAEA+MzMzPwAAQD4AAAA/AABAPjMzMz8AAAAAZmZmPwAAQD4AAAA/AACAPwAAwD4AAAAAAADAPgAAAAAAAKA+AACAPwAAgD0AAAAAAACAPQAAAAAAAAAAAAAAAAAAgD0AAIA/AACAPQAAgD8AAAA+AABQPwAAAD8AAFA/MzMzPwAAMD8zMzM/AABQPwAAAD8AAIA/ZmZmPwAAUD8zMzM/AABAPjMzMz8AAAAAAACAPwAAAABmZmY/AACAPwAA4D4AAAAAAADgPgAAAAAAAMA+AACAPwAAAD8AAAAAAAAAPwAAAAAAAOA+AAAAAAAAwD4AAIA/AADAPgAAgD8AAOA+AAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA9AACAP2ZmZj8AAIA/AACAPwAAUD8zMzM/"),
+"format": 34359738391,
+"material": ExtResource("1_3d2rc"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("zczMPs3MTL0AAAAAzczMPs3MTL2amZm+zczMPc3MzD2amZm+zczMPc3MTD6amZm+zczMPc3MTD4AAAAAzczMvc3MTD4AAAAAzczMvc3MTD4AAAAAzczMPc3MTD4AAAAAzczMPgAAAAAAAAAAzczMvc3MTD4AAAAAzczMPgAAAAAAAAAAzczMPc3MzD0AAAAAzczMPc3MTD4AAAAAzczMPc3MTD6amZm+zczMPgAAAACamZm+zczMPc3MzD0AAAAAzczMPc3MzD2amZm+zczMvc3MzD2amZm+zczMPgAAAACamZm+zczMPc3MTD6amZm+zczMvc3MTD6amZm+zczMPc3MzD2amZm+zczMPgAAAACamZm+zczMvc3MTD6amZm+zczMPgAAAAAAAAAAzczMPs3MTL0AAAAAzczMPc3MzD0AAAAAzczMPgAAAACamZm+zczMPgAAAAAAAAAAzczMPc3MTD4AAAAAzczMPc3MzD2amZm+zczMPc3MzD0AAAAAzczMPs3MTL0AAAAAzczMPs3MTL2amZm+zczMPs3MTL0AAAAAzczMPgAAAAAAAAAAzczMPc3MzD2amZm+zczMPs3MTL2amZm+zczMPgAAAACamZm+zczMPgAAAAAAAAAAzczMPgAAAACamZm+zczMPs3MTL2amZm+zczMvs3MTL0AAAAAzczMvs3MTL2amZm+zczMvgAAAACamZm+zczMPc3MzD0AAAAAzczMvc3MzD0AAAAAzczMvc3MTD4AAAAAzczMvc3MzD0AAAAAzczMvgAAAAAAAAAAzczMvc3MTD4AAAAAzczMvc3MzD2amZm+zczMvc3MzD0AAAAAzczMPc3MzD0AAAAAzczMvc3MTD6amZm+zczMvc3MTD4AAAAAzczMvgAAAAAAAAAAzczMvc3MTD4AAAAAzczMvc3MTD6amZm+zczMPc3MTD6amZm+zczMvc3MTD6amZm+zczMvc3MzD2amZm+zczMPc3MzD2amZm+zczMvc3MTD6amZm+zczMvgAAAACamZm+zczMvc3MzD2amZm+zczMvc3MzD0AAAAAzczMvs3MTL0AAAAAzczMvgAAAAAAAAAAzczMvs3MTL2amZm+zczMvs3MTL0AAAAAzczMvc3MzD0AAAAAzczMvgAAAACamZm+zczMvgAAAAAAAAAAzczMvs3MTL0AAAAAzczMvc3MzD0AAAAAzczMvc3MzD2amZm+zczMvs3MTL2amZm+zczMvgAAAAAAAAAAzczMvgAAAACamZm+zczMvc3MTD6amZm+zczMvgAAAACamZm+zczMvs3MTL2amZm+zczMvc3MzD2amZm+VFWqKv////9UVaoq/////1RVqir//////3//////////f/////////9//////////3//f////7//f/9/////v/9//3/+//+//3//f////7//f/9//v//v/9//3////+/MrPMzP////8ys8zM/////zKzzMz//////38AAP//////fwAA//////9/AAD//////////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+//3//f/7//7//f/9//v//v/9//3////+/MrPMzP////8ys8zM/////zKzzMz/////VFWqKv////9UVaoq/////1RVqir/////////f/////////9//////////3///////////wAA/7//////AAD/v/////8AAP+/////f/////////9//////////3//////AAD/f/////8AAP9//////wAA/3///////3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//38AAP//////fwAA//////9/AAD/////zEzMzP/////MTMzM/////8xMzMz//////3//////////f/////////9//////////////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+//3//f////7//f/9//v//v/9//3////+/qqqqKv////+qqqoq/////6qqqir/////AAD/f/////8AAP9//////wAA/3//////qqqqKv////+qqqoq/////6qqqir/////zEzMzP/////MTMzM/////8xMzMz//////////wAA/7//////AAD/v/////8AAP+/")
+}]
+
+[node name="Bridge" type="Node3D"]
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.15, 0, 0)
+mesh = SubResource("ArrayMesh_3d2rc")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5f5lpadt7v4"]
+
+[ext_resource type="Script" uid="uid://b6lese54eu3f6" path="res://场景/组件/UI/弹窗选择/OptionSelectComponent.cs" id="1_mkj41"]
+
+[node name="OptionSelectComponent" type="HBoxContainer" node_paths=PackedStringArray("_label", "_optionBut")]
+offset_right = 141.0
+offset_bottom = 31.0
+focus_mode = 1
+script = ExtResource("1_mkj41")
+_label = NodePath("Label")
+_optionBut = NodePath("OptionButton")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+focus_mode = 1
+text = " 名称 "
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+alignment = 1

@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://bebd22s452md"]
+
+[ext_resource type="Script" uid="uid://cl862ub1ckvrx" path="res://场景/3D/网格/网格块/一级区块/HexGridChunk.cs" id="1_bukpq"]
+[ext_resource type="PackedScene" uid="uid://bfkauj8n28moj" path="res://场景/3D/网格/绘制/HexMesh.tscn" id="2_xt6id"]
+[ext_resource type="Material" uid="uid://dgex0o00gn1pn" path="res://2_资源/材质/网格/Terrain.tres" id="3_0gtd2"]
+[ext_resource type="Material" uid="uid://dx5o8liifdcir" path="res://2_资源/材质/网格/River.tres" id="4_0gtd2"]
+[ext_resource type="Material" uid="uid://c6ucv6kpnxmkc" path="res://2_资源/材质/网格/Road.tres" id="5_0gtd2"]
+[ext_resource type="Material" uid="uid://blt1nxvtr63xi" path="res://2_资源/材质/网格/Water.tres" id="6_0gtd2"]
+[ext_resource type="Material" uid="uid://bk5jslh3b3ley" path="res://2_资源/材质/网格/WaterShore.tres" id="7_yvcuj"]
+[ext_resource type="Material" uid="uid://bicfukywegtac" path="res://2_资源/材质/网格/Estuaries.tres" id="8_wt0jj"]
+[ext_resource type="PackedScene" uid="uid://c0sh2xis83pb" path="res://场景/3D/网格/特征管理/HexFeatureManager.tscn" id="9_wgn65"]
+
+[node name="HexGridChunk" type="Node3D" node_paths=PackedStringArray("_features", "_terrain", "_river", "_roads", "_water", "_waterShore", "_estuaries")]
+script = ExtResource("1_bukpq")
+_features = NodePath("Feature")
+_terrain = NodePath("Terrain")
+_river = NodePath("River")
+_roads = NodePath("Road")
+_water = NodePath("Water")
+_waterShore = NodePath("WaterShore")
+_estuaries = NodePath("Estuaries")
+
+[node name="Terrain" parent="." instance=ExtResource("2_xt6id")]
+_useCollider = true
+_useCellData = true
+_material = ExtResource("3_0gtd2")
+_debugColor = Color(0.0431373, 0, 0.807843, 1)
+
+[node name="River" parent="." instance=ExtResource("2_xt6id")]
+_useUvCoordinates = true
+_material = ExtResource("4_0gtd2")
+
+[node name="Road" parent="." instance=ExtResource("2_xt6id")]
+_useUvCoordinates = true
+_material = ExtResource("5_0gtd2")
+_debugColor = Color(0, 0.83, 0.0968334, 1)
+
+[node name="Water" parent="." instance=ExtResource("2_xt6id")]
+_material = ExtResource("6_0gtd2")
+_debugColor = Color(1, 0, 0.831373, 1)
+
+[node name="WaterShore" parent="." instance=ExtResource("2_xt6id")]
+_useUvCoordinates = true
+_material = ExtResource("7_yvcuj")
+
+[node name="Estuaries" parent="." instance=ExtResource("2_xt6id")]
+_useUvCoordinates = true
+_useUv2Coordinates = true
+_material = ExtResource("8_wt0jj")
+
+[node name="Feature" parent="." instance=ExtResource("9_wgn65")]

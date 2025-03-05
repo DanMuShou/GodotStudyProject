@@ -1,0 +1,1 @@
+#define BASE_SIZE 10.0
